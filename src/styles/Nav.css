@@ -34,7 +34,7 @@
   display: flex;
   margin-right: 20px;
 }
-.nav__lists > ul > li {
+.nav__lists > ul > a > li {
   border-radius: 70px;
   padding: 10px 15px;
   font-family: "Roboto Mono", monospace;
@@ -44,7 +44,7 @@
   letter-spacing: 1.5px;
   transition: 0.1s;
 }
-.nav__lists > ul > li:hover {
+.nav__lists > ul > a > li:hover {
   background: #6c63ff;
   color: white;
 }
@@ -63,15 +63,17 @@
     flex-direction: column;
     align-items: center;
     padding: 0;
+    margin: 0;
     transition: 0.3s;
   }
   .nav__lists > ul.open {
     background: white;
     transform: translateX(0);
   }
-  .nav__lists > ul > li {
+  .nav__lists > ul > a > li {
     position: relative;
     top: 70px;
+    margin: 0 25px;
     margin-bottom: 3px;
     width: 70%;
     text-align: center;

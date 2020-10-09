@@ -1,0 +1,33 @@
+.facts {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 1px solid darkgray;
+  color: white;
+  font-family: "Syne", sans-serif;
+  background: rgba(110, 0, 255, 0.4);
+}
+
+.facts > h1 {
+  margin-top: 50px;
+}
+
+.facts__header {
+  width: 100%;
+  text-align: center;
+}
+
+.facts__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.content {
+  text-align: center;
+  margin: 25px 35px 25px 35px;
+}
+.content > h5 {
+  font-weight: 400;
+}

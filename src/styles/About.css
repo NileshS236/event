@@ -1,0 +1,136 @@
+.About {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Syne", sans-serif;
+}
+
+.About__home > h1 {
+  color: white;
+  font-size: 100px;
+}
+.About__home > p {
+  color: white;
+}
+
+.About__home {
+  position: relative;
+  display: flex;
+  top: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/carousel-5.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 87vh;
+  width: 100%;
+}
+
+.About__content {
+  position: relative;
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+.About__content > img {
+  margin: auto;
+  height: 400px;
+  border-left: 1px solid darkgray;
+}
+.About__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.About__info > h5 {
+  width: 400px;
+  margin-right: 150px;
+  font-family: "Syne", sans-serif;
+  color: #a0a0a0;
+}
+
+.About__team {
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.About__team > h1 {
+  padding-bottom: 20px;
+  width: 50%;
+  text-align: center;
+  border-bottom: 1px solid;
+  border-color: rgba(124, 0, 194) rgba(110, 0, 225);
+}
+.About__members {
+  display: flex;
+  justify-content: space-around;
+}
+.member > img {
+  height: 300px;
+  margin: 50px 30px 15px 30px;
+  object-fit: contain;
+  transition: 0.3s;
+}
+.member > h2 {
+  text-align: center;
+  margin-bottom: 100px;
+}
+.member > img:hover {
+  transform: scale(1.1);
+  box-shadow: 1px 4px 10px rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 1280px) {
+  .About__content {
+    flex-direction: column;
+  }
+  .About__content > img {
+    padding: none;
+    border: none;
+    margin-top: -20px;
+  }
+  .About__info > h5 {
+    margin-top: 100px;
+    margin-right: 0;
+    width: 70%;
+  }
+  .About__more {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 764px) {
+  .About > h1 {
+    font-size: 70px;
+  }
+  .About__content > img {
+    height: 200px;
+    margin-top: 0px;
+  }
+  .About__info > h5 {
+    margin-right: 0;
+    text-align: center;
+    padding: 0;
+  }
+  .About__home > h1 {
+    font-size: 70px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .About__content > img {
+    display: none;
+  }
+  .About__home > h1 {
+    font-size: 50px;
+  }
+}

@@ -43,9 +43,17 @@ const Footer = () => {
             <li>Contact</li>
           </ul>
         </div>
+        <div className="footer__contact">
+          <h3>TechTrikz</h3>
+          <p>
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the blind texts.
+          </p>
+          <button className="contact">Get in Touch</button>
+        </div>
       </div>
       <div className="footer__copyright">
-        <p>Copyright &copy;2020 Developed by SRG</p>
+        <p>Copyright &copy;2020 | Made With ❤ by SRG solutions IT Pvt. Ltd.</p>
       </div>
     </div>
   );
