@@ -17,9 +17,7 @@ const AboutSec = () => {
             officiis quam vitae commodi? Vero sed labore officia asperiores?
             Voluptas ut placeat in!
           </h5>
-          <button className="about__more">
-            View More <span>&#62;</span>
-          </button>
+          <button className="about__more">View More &#62;</button>
         </div>
       </div>
     </div>
