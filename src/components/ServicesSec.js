@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "../styles/ServicesSec.css";
 
@@ -22,7 +23,9 @@ const ServicesSec = () => {
           <h4>Digital Marketing</h4>
         </div>
       </div>
-      <button className="services__viewMore">View More &#62;</button>
+      <Link to="/Services">
+        <button className="services__viewMore">View More &#62;</button>
+      </Link>
     </div>
   );
 };

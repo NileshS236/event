@@ -17,24 +17,24 @@ const Nav = () => {
       </div>
       <div className="nav__lists">
         <ul>
-          <Link to="/">
+          <a href="/">
             <li>Home</li>
-          </Link>
-          <Link to="/about">
+          </a>
+          <a href="/about">
             <li>About</li>
-          </Link>
-          <Link to="/services">
+          </a>
+          <a href="/services">
             <li>Services</li>
-          </Link>
-          <Link to="/events">
+          </a>
+          <a href="/events">
             <li>Events</li>
-          </Link>
-          <Link to="/portfolio">
+          </a>
+          <a href="/portfolio">
             <li>Portfolio</li>
-          </Link>
-          <Link to="contacts">
-            <li>Contacts</li>
-          </Link>
+          </a>
+          <a href="contacts">
+            <li>Contact Us</li>
+          </a>
         </ul>
       </div>
     </div>

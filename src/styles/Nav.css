@@ -19,12 +19,19 @@
 .nav__hamMenu {
   display: none;
   background: transparent;
+  height: 45px;
+  width: 45px;
   border: none;
+  border-radius: 50%;
+  outline: none !important;
   font-weight: 600;
-  font-size: 28px;
+  font-size: 24px;
   position: relative;
   top: -10%;
   z-index: 1000;
+}
+.nav__hamMenu:hover {
+  background: #ededed;
 }
 
 .nav__logo > img {
@@ -45,7 +52,7 @@
   transition: 0.1s;
 }
 .nav__lists > ul > a > li:hover {
-  background: #6c63ff;
+  background: #41ee;
   color: white;
 }
 
@@ -75,7 +82,7 @@
     top: 70px;
     margin: 0 25px;
     margin-bottom: 3px;
-    width: 70%;
+    width: 80%;
     text-align: center;
     font-size: 20px;
   }

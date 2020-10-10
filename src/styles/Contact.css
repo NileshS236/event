@@ -1,0 +1,170 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.Contact {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: "Syne", sans-serif;
+}
+
+.Contact__home {
+  position: relative;
+  display: flex;
+  top: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/carousel-5.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  height: 15vh;
+  width: 100%;
+}
+.Contact__home > h1 {
+  color: white;
+  font-size: 80px;
+}
+
+.Contact__form {
+  display: flex;
+  flex-direction: column;
+}
+.Contact__form > input,
+.Contact__form > textarea {
+  position: relative;
+  background: transparent;
+  width: 400px;
+  height: 50px;
+  top: 120px;
+  margin: 10px;
+  padding: 4px;
+  padding-left: 10px;
+  border: 1px solid;
+  border-color: #41ee;
+  border-radius: 70px;
+  outline: none !important;
+}
+
+.Contact__content {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.Contact__form > textarea {
+  border-radius: 30px;
+  height: auto;
+}
+
+.button {
+  position: relative;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  width: 150px;
+  border: 1px solid;
+  border-radius: 70px;
+  outline: none !important;
+  border-color: #41ee;
+  margin-bottom: 150px;
+  background: transparent;
+  transition: 0.3s;
+}
+.button:hover {
+  background: #41ee;
+  color: white;
+}
+.mapouter {
+  position: relative;
+  text-align: right;
+  height: 416px;
+  width: 800px;
+  top: 150px;
+}
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 416px;
+  width: 800px;
+  text-align: center;
+}
+
+.Contact__footer {
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  background-color: lightgray;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@media screen and (max-width: 1280px) {
+  .gmap_canvas {
+    width: 500px;
+  }
+  .mapouter {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .Contact__content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .mapouter {
+    top: 0;
+    width: 700px;
+    margin-bottom: 50px;
+  }
+  .gmap_canvas {
+    width: 700px;
+  }
+}
+
+@media screen and (max-width: 745px) {
+  .mapouter {
+    width: 500px;
+  }
+  .gmap_canvas {
+    width: 500px;
+  }
+  .Contact__home > h1 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .Contact__form > input,
+  .Contact__form > textarea {
+    height: 40px;
+    width: 200px;
+  }
+  .button {
+    width: 80px;
+  }
+  .mapouter {
+    width: 300px;
+  }
+  .gmap_canvas {
+    width: 300px;
+  }
+}

@@ -29,15 +29,7 @@ const About = () => {
         <div className="About__members">
           <div className="member">
             <img src="/images/img.jfif" alt="Riddhi" />
-            <h2 className="member__name">Riddhi</h2>
-          </div>
-          <div className="member">
-            <img src="/images/img.jfif" alt="Payal" />
-            <h2 className="member__name">Payal</h2>
-          </div>
-          <div className="member">
-            <img src="/images/img.jfif" alt="Naman" />
-            <h2 className="member__name">Naman</h2>
+            <h2 className="member__name">SRG</h2>
           </div>
         </div>
       </div>
