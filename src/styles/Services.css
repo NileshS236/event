@@ -33,6 +33,10 @@
 .Services img {
   width: 150px;
   height: 200px;
+  transition: 0.3s;
+}
+.Services img:hover {
+  opacity: 0.8;
 }
 
 .Services__content {
