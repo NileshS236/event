@@ -20,7 +20,7 @@
 .footer__contact > p {
   margin-top: 30px;
 }
-.footer__contact > button {
+.footer__contact > a > button {
   margin-top: 50px;
   height: 40px;
   width: 150px;
@@ -31,7 +31,7 @@
   color: white;
   transition: 0.2s;
 }
-.footer__contact > button:hover {
+.footer__contact > a > button:hover {
   background: transparent;
   border: 1px solid;
   border-color: rgba(124, 0, 194) rgba(110, 0, 225);

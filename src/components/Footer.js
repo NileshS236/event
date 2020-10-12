@@ -49,7 +49,9 @@ const Footer = () => {
             Far far away, behind the word mountains, far from the countries
             Vokalia and Consonantia, there live the blind texts.
           </p>
-          <button className="contact">Get in Touch</button>
+          <a href="/contacts">
+            <button className="contact">Get in Touch</button>
+          </a>
         </div>
       </div>
       <div className="footer__copyright">

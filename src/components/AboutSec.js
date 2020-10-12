@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../styles/AboutSec.css";
 
 const AboutSec = () => {
@@ -18,9 +17,9 @@ const AboutSec = () => {
             officiis quam vitae commodi? Vero sed labore officia asperiores?
             Voluptas ut placeat in!
           </h5>
-          <Link to="/about">
+          <a href="/about">
             <button className="about__more">View More &#62;</button>
-          </Link>
+          </a>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ const Contact = () => {
   const submitMsg = async (e) => {
     e.preventDefault();
     const response = await axios.post(
-      `http://localhost:8080/event/insert.php/`,
+      `http://localhost:8080/contact/insert.php/`,
       {
         cname: name,
         cemail: email,
@@ -20,7 +20,7 @@ const Contact = () => {
       }
     );
 
-    alert(response.data.message);
+    alert(`Message received. You'll be replied soon on ${email}`);
   };
   return (
     <div className="Contact">
