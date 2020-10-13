@@ -88,47 +88,23 @@ const EventDetails = () => {
             pamphlet, thesis, etc. The best thing about Essay is you can use any
             type of language – formal or informal. It can biography, the
             autobiography of anyone. Following is a great list of 100 essay
-            topics. We will be adding 400 more soon!
+            topics. We will be adding 400 more soon! Essay topics in English can
+            be difficult to come up with. While writing essays, many college and
+            high school students face writer’s block and have a hard time to
+            think about topics and ideas for an essay. In this article, we will
+            list out many good essay topics from different categories like
+            argumentative essays, essays on technology, environment essays for
+            students from 5th, 6th, 7th, 8th grades. Following list of essay
+            topics are for all – from kids to college students. We have the
+            largest collection of essays. An essay is nothing but a piece of
+            content which is written from the perception of writer or author.
+            Essays are similar to a story, pamphlet, thesis, etc. The best thing
+            about Essay is you can use any type of language – formal or
+            informal. It can biography, the autobiography of anyone. Following
+            is a great list of 100 essay topics. We will be adding 400 more
+            soon!
           </p>
         </div>
-        {/* <div className="eventDetails__form">
-          <form method="post" onSubmit={enrollUser}>
-            <div className="eventDetails__Inputs">
-              <input
-                type="text"
-                className="userName"
-                placeholder="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-              <input
-                type="email"
-                className="email"
-                placeholder="Email"
-                value={email}
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <input
-                type="number"
-                className="phone"
-                placeholder="Phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-              />
-            </div>
-            <div className="eventDetails__qts">
-              <h5>Few Questions</h5>
-              {qts.length && qts.map((qt) => <p>{qt?.qts}</p>)}
-            </div>
-            <button className="enroll" type="submit">
-              Enroll
-            </button>
-          </form>
-        </div> */}
         <div className="container" id="container">
           <div className="form-container sign-up-container">
             <form action="#" method="post" onSubmit={enrollUser}>

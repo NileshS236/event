@@ -38,21 +38,25 @@ input[type="number"] {
 }
 
 .Contact__form {
+  position: relative;
   display: flex;
   flex-direction: column;
+  top: 120px;
+  padding: 25px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.Contact__form:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 .Contact__form > input,
 .Contact__form > textarea {
-  position: relative;
-  background: transparent;
+  background: #eee;
+  border: none;
   width: 400px;
   height: 50px;
-  top: 120px;
   margin: 10px;
-  padding: 4px;
-  padding-left: 10px;
-  border: 1px solid;
-  border-color: #41ee;
+  padding: 12px 15px;
   border-radius: 70px;
   outline: none !important;
 }
@@ -70,20 +74,20 @@ input[type="number"] {
 
 .button {
   position: relative;
-  top: 120px;
-  height: 40px;
+  top: 150px;
+  height: 50px;
   width: 150px;
   border: 1px solid;
   border-radius: 70px;
   outline: none !important;
   border-color: #41ee;
-  margin-bottom: 150px;
-  background: transparent;
+  margin-bottom: 200px;
+  color: white;
+  background: #41ee;
   transition: 0.3s;
 }
-.button:hover {
-  background: #41ee;
-  color: white;
+.button:active {
+  transform: scale(0.95);
 }
 .mapouter {
   position: relative;
@@ -107,6 +111,7 @@ input[type="number"] {
   justify-content: center;
   width: 100%;
   height: 60px;
+  margin-bottom: 0;
   background-color: lightgray;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",

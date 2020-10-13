@@ -32,7 +32,7 @@
 }
 .eventDetails__description {
   padding: 10px;
-  min-height: 150px;
+  max-height: 300px;
   overflow-y: scroll;
   width: 700px;
 }
@@ -167,8 +167,10 @@ input:focus {
   background-color: #fff;
   border-radius: 10px;
   position: relative;
+  top: 50px;
+  transform: translateX(-40%);
   overflow: hidden;
-  width: 768px;
+  width: 800px;
   max-width: 100%;
   min-height: 480px;
   transition: 0.2s;
