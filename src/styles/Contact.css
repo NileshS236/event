@@ -71,8 +71,6 @@ input[type="number"] {
 .button {
   position: relative;
   top: 120px;
-  left: 50%;
-  transform: translateX(-50%);
   height: 40px;
   width: 150px;
   border: 1px solid;
