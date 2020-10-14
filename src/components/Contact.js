@@ -20,6 +20,12 @@ const Contact = () => {
       }
     );
 
+    const inputs = document.querySelectorAll(".form-control");
+
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].value = "";
+    }
+
     alert(`Message received. You'll be replied soon on ${email}`);
   };
   return (
@@ -28,11 +34,11 @@ const Contact = () => {
         <h1>Contact</h1>
       </div>
       <div className="Contact__content">
-        <form method="post" onSubmit={submitMsg}>
-          <div className="Contact__form">
+        <form onSubmit={submitMsg}>
+          <div className="Contact__form border">
             <input
               type="text"
-              className="userName"
+              className="userName form-control"
               placeholder="Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -40,7 +46,7 @@ const Contact = () => {
             />
             <input
               type="email"
-              className="email"
+              className="email form-control"
               placeholder="Email"
               value={email}
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
@@ -49,14 +55,14 @@ const Contact = () => {
             />
             <input
               type="number"
-              className="phone"
+              className="phone form-control"
               placeholder="Phone"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               required
             />
             <textarea
-              className="messageBox"
+              className="messageBox form-control"
               placeholder="Message"
               cols="30"
               rows="10"
@@ -65,7 +71,7 @@ const Contact = () => {
               required
             ></textarea>
           </div>
-          <button className="button" type="submit">
+          <button className="button mx-auto" type="submit">
             Submit
           </button>
         </form>

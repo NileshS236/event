@@ -9,14 +9,14 @@ const Home = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 custom-img"
-            src="/images/carousel-1.jpeg"
+            src="/images/carousel-1.png"
             alt="First slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100 custom-img"
-            src="/images/carousel-2.jpeg"
+            src="/images/carousel-2.png"
             alt="Second slide"
           />
         </Carousel.Item>

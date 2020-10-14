@@ -5,28 +5,18 @@ import axios from "axios";
 import "../styles/EventDetails.css";
 
 const EventDetails = () => {
-  const animate = () => {
-    const signUpButton = document.querySelector("#signUp");
-    const signInButton = document.querySelector("#signIn");
-    const container = document.querySelector("#container");
-
-    console.log(signUpButton + "x" + signInButton + "y" + container);
-
-    signUpButton.addEventListener("click", () => {
-      container.classList.add("right-panel-active");
-    });
-
-    signInButton.addEventListener("click", () => {
-      container.classList.remove("right-panel-active");
-    });
-  };
-
   const { id } = useParams();
   const [state, setState] = useState([]);
-  const [qts, setQts] = useState([]);
+  const [qnum, setQnum] = useState(0);
+  const [questions, setQuestions] = useState([]);
+
+  const [userDetails, setUserDetails] = useState([]);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState();
+  const [phone, setPhone] = useState("");
+  const [ans, setAns] = useState("");
+
   const fetchDetails = async () => {
     const response = await axios.get(
       `http://localhost:8080/eventForm/singledata.php?E_ID=${id}`
@@ -34,138 +24,138 @@ const EventDetails = () => {
     setState(response.data[0]);
   };
 
-  // const qts = await axios.get('http://localhost:8080/questions/fetch.php')
+  const fetchUserDetails = async () => {
+    const userdetails = await axios.get(
+      "http://localhost:8080/response/fetch.php"
+    );
+    setUserDetails(userdetails.data);
+  };
 
-  const fetchQts = async () => {
+  const fetchQtns = async () => {
     const qtns = await axios.get(
       `http://localhost:8080/questions/singledata.php?E_ID=${id}`
     );
-    setQts(qtns.data);
-    console.log(qts);
+    setQuestions(qtns.data);
   };
 
-  const enrollUser = async (e) => {
+  const submitDetails = (e) => {
     e.preventDefault();
-    const response = await axios.post(
-      "http://localhost:8080/response/insert.php",
-      {
-        E_ID: id,
-        name: name,
-        email: email,
-        num: phone,
-      }
-    );
-    console.log(response);
+    const user = axios.post("http://localhost:8080/response/insert.php", {
+      E_ID: questions[0].E_ID,
+      name: name,
+      email: email,
+      num: phone,
+    });
+
+    document.querySelector(".detailsFormContent").style.display = "none";
+    document.querySelector(".qtnFormContent").style.display = "flex";
   };
 
   useEffect(() => {
     fetchDetails();
-    fetchQts();
+    fetchQtns();
+    fetchUserDetails();
   }, []);
 
-  return (
-    <div className="eventDetails">
-      <div className="eventDetails__img">
-        <img src={state?.image} alt="" />
-      </div>
-      <div className="eventDetails__content">
-        <div className="eventDetails__name">
-          <h2>{state?.name}</h2>
-          <p>{state?.edate}</p>
-        </div>
-        <div className="eventDetails__description">
-          <p>
-            Essay topics in English can be difficult to come up with. While
-            writing essays, many college and high school students face writer’s
-            block and have a hard time to think about topics and ideas for an
-            essay. In this article, we will list out many good essay topics from
-            different categories like argumentative essays, essays on
-            technology, environment essays for students from 5th, 6th, 7th, 8th
-            grades. Following list of essay topics are for all – from kids to
-            college students. We have the largest collection of essays. An essay
-            is nothing but a piece of content which is written from the
-            perception of writer or author. Essays are similar to a story,
-            pamphlet, thesis, etc. The best thing about Essay is you can use any
-            type of language – formal or informal. It can biography, the
-            autobiography of anyone. Following is a great list of 100 essay
-            topics. We will be adding 400 more soon! Essay topics in English can
-            be difficult to come up with. While writing essays, many college and
-            high school students face writer’s block and have a hard time to
-            think about topics and ideas for an essay. In this article, we will
-            list out many good essay topics from different categories like
-            argumentative essays, essays on technology, environment essays for
-            students from 5th, 6th, 7th, 8th grades. Following list of essay
-            topics are for all – from kids to college students. We have the
-            largest collection of essays. An essay is nothing but a piece of
-            content which is written from the perception of writer or author.
-            Essays are similar to a story, pamphlet, thesis, etc. The best thing
-            about Essay is you can use any type of language – formal or
-            informal. It can biography, the autobiography of anyone. Following
-            is a great list of 100 essay topics. We will be adding 400 more
-            soon!
-          </p>
-        </div>
-        <div className="container" id="container">
-          <div className="form-container sign-up-container">
-            <form action="#" method="post" onSubmit={enrollUser}>
-              <h1>Few Questions</h1>
-              {qts.length &&
-                qts.map((qt) => (
-                  <input type="text" placeholder={qt?.qts} required />
-                ))}
-              <button>Enroll</button>
-            </form>
-          </div>
-          <div className="form-container sign-in-container">
-            <form method="post">
-              <h1>Enroll</h1>
+  const changeqts = async (e) => {
+    e.preventDefault();
+    const answered = await axios.post(
+      "http://localhost:8080/answer/insert.php",
+      {
+        U_ID: userDetails[userDetails.length - 1]?.ID,
+        Q_ID: questions[qnum]?.Q_ID,
+        E_ID: questions[qnum]?.E_ID,
+        ans: ans,
+      }
+    );
+    if (
+      qnum < questions.length - 1 &&
+      document.querySelector(".answer").value != ""
+    ) {
+      setQnum((prevCount) => prevCount + 1);
+      setAns("");
+    } else {
+      document.querySelector(".qtnFormContent").style.display = "none";
+      document.querySelector(".enrolled").style.display = "block";
+    }
+  };
 
-              <input
-                type="text"
-                placeholder="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <input
-                type="number"
-                placeholder="Phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-              />
-              <button>Submit</button>
-            </form>
+  return (
+    <>
+      <div className="eventDetails">
+        <div className="eventDetails__img">
+          <img src={state?.image} alt="" />
+        </div>
+        <div className="eventDetails__content">
+          <div className="eventDetails__name">
+            <h2>{state?.name}</h2>
+            <p>{state?.edate}</p>
           </div>
-          <div className="overlay-container">
-            <div className="overlay">
-              <div className="overlay-panel overlay-left">
-                <h1>Welcome Back!</h1>
-                <p>Provide personal details</p>
-                <button className="ghost" id="signIn">
-                  Previous
-                </button>
-              </div>
-              <div className="overlay-panel overlay-right">
-                <h1>Hello, Friend!</h1>
-                <p>Answer few questions to Enroll</p>
-                <button className="ghost" id="signUp" onClick={animate}>
-                  Next
-                </button>
-              </div>
-            </div>
+          <div className="eventDetails__description border">
+            <p>{state?.discription}</p>
           </div>
         </div>
       </div>
-    </div>
+      <div className="detailsFormContent container border my-3 py-3 justify-content-center align-items-center">
+        <form
+          className="detailsForm w-50 d-flex flex-column"
+          onSubmit={submitDetails}
+        >
+          <input
+            type="text"
+            placeholder="Name"
+            className="form-control my-2 py-2"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+          <input
+            type="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            placeholder="Email"
+            className="form-control my-3 py-2"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Phone"
+            className="form-control my-3"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          />
+          <button type="submit" className="submit btn btn-primary w-30 mx-auto">
+            Submit
+          </button>
+        </form>
+      </div>
+      <div className="qtnFormContent container border my-3 py-3 justify-content-center align-items-center">
+        <form
+          className="qtnForm d-flex flex-column w-100 py-3"
+          onSubmit={changeqts}
+        >
+          <h2>{questions[qnum]?.questn}</h2>
+          <input
+            type="text"
+            className="answer form-control my-3"
+            placeholder="Your answer here..."
+            value={ans}
+            onChange={(e) => setAns(e.target.value)}
+            required
+          />
+
+          <button
+            type="submit"
+            className="enroll btn btn-primary my-3 w-25 ml-auto"
+          >
+            Next
+          </button>
+        </form>
+      </div>
+      <h1 className="enrolled">You're Enrolled</h1>
+    </>
   );
 };
 

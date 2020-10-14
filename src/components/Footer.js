@@ -6,17 +6,25 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 
 import "../styles/Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div className="footer">
       <div className="footer__contents">
         <div className="footer__social">
-          <FacebookIcon />
-          <InstagramIcon />
-          <TwitterIcon />
-          <LinkedInIcon />
-          <YouTubeIcon />
+          <a href="https://www.facebook.com/TECHTRICKZ20/">
+            <FacebookIcon />
+          </a>
+          <a href="https://www.instagram.com/invites/contact/?i=plrx7j65ry4q&utm_content=jfetkst">
+            <InstagramIcon />
+          </a>
+          <a href="https://twitter.com/techtrickz2?s=09">
+            <TwitterIcon />
+          </a>
+          <a href="https://www.linkedin.com/in/tech-trickz-5397681b9">
+            <LinkedInIcon />
+          </a>
         </div>
         <div className="footer__info">
           <div className="footer__infoAddress">
@@ -29,7 +37,7 @@ const Footer = () => {
           </div>
           <div className="footer__infoEmail">
             <h5>Email</h5>
-            <p>savla.rh@somaiya.edu</p>
+            <p>techtrickz20@gmail.com</p>
           </div>
         </div>
         <div className="footer__quickLinks">

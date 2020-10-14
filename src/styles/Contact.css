@@ -43,7 +43,7 @@ input[type="number"] {
   flex-direction: column;
   top: 120px;
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: 0.3s;
 }
 .Contact__form:hover {
@@ -57,7 +57,6 @@ input[type="number"] {
   height: 50px;
   margin: 10px;
   padding: 12px 15px;
-  border-radius: 70px;
   outline: none !important;
 }
 
@@ -68,17 +67,18 @@ input[type="number"] {
 }
 
 .Contact__form > textarea {
-  border-radius: 30px;
   height: auto;
 }
 
 .button {
   position: relative;
   top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
   height: 50px;
   width: 150px;
   border: 1px solid;
-  border-radius: 70px;
+  border-radius: 5px;
   outline: none !important;
   border-color: #41ee;
   margin-bottom: 200px;

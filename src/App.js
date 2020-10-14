@@ -14,14 +14,15 @@ import Portfolio from "./components/Portfolio";
 import Services from "./components/Services";
 import ServicesSec from "./components/ServicesSec";
 import WhyUs from "./components/WhyUs";
+import AdminPanel from "./components/AdminPanel";
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Nav />
         <Switch>
           <Route path="/" exact>
+            <Nav />
             <Home />
             <WhyUs />
             <AboutSec />
@@ -30,27 +31,36 @@ function App() {
             <Footer />
           </Route>
           <Route path="/about" exact>
+            <Nav />
             <About />
             <Footer />
           </Route>
           <Route path="/services" exact>
+            <Nav />
             <Services />
             <Footer />
           </Route>
           <Route path="/contacts" exact>
+            <Nav />
             <Contact />
           </Route>
           <Route path="/portfolio" exact>
+            <Nav />
             <Portfolio />
             <Footer />
           </Route>
           <Route path="/events" exact>
+            <Nav />
             <Event />
             <Footer />
           </Route>
           <Route path="/events/:id" exact>
+            <Nav />
             <EventDetails />
             <Footer />
+          </Route>
+          <Route path="/who-have-admin-page-address/admin-have-the-admin-page-address/what-is-the-admin-page-address-id/7723757327375332">
+            <AdminPanel />
           </Route>
         </Switch>
       </Router>

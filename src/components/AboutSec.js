@@ -9,13 +9,13 @@ const AboutSec = () => {
         <img className="about__svg" src="/images/about.svg" alt="about" />
         <div className="about__info">
           <h5>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-            laudantium ipsam blanditiis corporis inventore repellat. Quod eum
-            dignissimos, nulla
-            <br /> consectetur quis eligendi ea? Blanditiis modi eligendi nobis
-            assumenda placeat expedita hic, harum soluta quibusdam at est eaque
-            officiis quam vitae commodi? Vero sed labore officia asperiores?
-            Voluptas ut placeat in!
+            Founded in 2020, Techtrickz is growing into one company which can
+            give you all best Service related to TECHNOLOGY. Technology is fast
+            changing the fundamental nature of businesses. One company which you
+            can experience with all the amazing service You don’t need to get
+            afraid now our company will help you to get friendly with
+            technology, we have all expertise in our team for all things related
+            to tech
           </h5>
           <a href="/about">
             <button className="about__more">View More &#62;</button>

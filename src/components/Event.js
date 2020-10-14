@@ -10,7 +10,7 @@ function Event() {
     const response = await axios.get(
       "http://localhost:8080/eventForm/fetch.php"
     );
-    setEventData(response.data);
+    setEventData(response?.data);
   };
 
   useEffect(() => {
