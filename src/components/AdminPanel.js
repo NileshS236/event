@@ -50,7 +50,7 @@ const Contact = () => {
   const [contInfo, setContInfo] = useState([]);
   const contactApi = async () => {
     const contactInfo = await axios.get(
-      "http://localhost:8080/contact/fetch.php"
+      "http://techtrickz.in/Apis/contact/fetch.php"
     );
     setContInfo(contactInfo.data);
   };
@@ -93,12 +93,14 @@ const Portfolio = () => {
   const [images, setImages] = useState([]);
   const getImg = async () => {
     const portfolioImg = await axios.get(
-      "http://localhost:8080/portfolio/fetch.php"
+      "http://techtrickz.in/Apis/portfolio/fetch.php"
     );
     setImages(portfolioImg.data);
   };
 
-  console.log(images);
+  const [imgAdd, setImgAdd] = useState("");
+
+  console.log(imgAdd);
 
   useEffect(() => {
     getImg();
@@ -110,12 +112,31 @@ const Portfolio = () => {
     margin: "20px",
   };
 
-  // const delImg = (e) => {
-  //   console.log(e.target.value);
-  // };
+  const postImg = async (e) => {
+    e.preventDefault();
+    const response = await axios.post(
+      "http://techtrickz.in/Apis/portfolio/insert.php",
+      {
+        cimage: imgAdd,
+      }
+    );
+    console.log(response);
+  };
 
   return (
-    <React.Fragment>
+    <>
+      <form className="container form border py-3" onSubmit={postImg}>
+        <input
+          type="text"
+          placeholder="Enter image address"
+          className="form-control"
+          value={imgAdd}
+          onChange={(e) => setImgAdd(e.target.value)}
+        />
+        <button type="submit" className="btn btn-primary">
+          Post
+        </button>
+      </form>
       {images?.map((image) => (
         <div>
           <img
@@ -128,7 +149,7 @@ const Portfolio = () => {
             value={image.P_ID}
             onClick={(e) =>
               // const del = axios.post(
-              //   `http://localhost:8080/portfolio/delete.php`,
+              //   `http://techtrickz.in/Apis/portfolio/delete.php`,
               //   {
               //     cid: e.target.value,
               //   }
@@ -141,14 +162,74 @@ const Portfolio = () => {
           </button>
         </div>
       ))}
-    </React.Fragment>
+    </>
   );
 };
 
 const Event = () => {
+  const [name, setName] = useState("");
+  const [date, setDate] = useState("");
+  const [description, setDescription] = useState("");
+  const [imgAdd, setImgAdd] = useState("");
+
+  const createEvent = async (e) => {
+    e.preventDefault();
+    const response = await axios.post(
+      "http://techtrickz.in/Apis/eventForm/insert.php",
+      {
+        cimage: imgAdd,
+        cname: name,
+        cdiscription: description,
+        cdate: date,
+      }
+    );
+    console.log(response);
+  };
+
   return (
     <>
-      <h1>test Event</h1>
+      <form className="container form border py-3" onSubmit={createEvent}>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="date"
+          className="form-control"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+        />
+        <textarea
+          type="text"
+          className="form-control"
+          placeholder="description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Enter image address"
+          className="form-control"
+          value={imgAdd}
+          onChange={(e) => {
+            setImgAdd(e.target.value);
+          }}
+        />
+        <button className="btn btn-primary" type="submit">
+          Create Event
+        </button>
+      </form>
+      <form className="form container py-3 border">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Question here"
+        />
+        <button className="btn btn-primary">Next</button>
+      </form>
     </>
   );
 };

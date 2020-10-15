@@ -8,7 +8,7 @@ function Event() {
 
   const fetchEventData = async () => {
     const response = await axios.get(
-      "http://localhost:8080/eventForm/fetch.php"
+      "http://techtrickz.in/Apis/eventForm/fetch.php"
     );
     setEventData(response?.data);
   };

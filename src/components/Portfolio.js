@@ -8,7 +8,7 @@ const Portfolio = () => {
 
   const fetchImages = async () => {
     const response = await axios.get(
-      "http://localhost:8080/portfolio/fetch.php"
+      "http://techtrickz.in/Apis/portfolio/fetch.php"
     );
 
     setImage(response.data);

@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Nav.css";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const openHamMenu = () => {
@@ -16,24 +17,24 @@ const Nav = () => {
       </div>
       <div className="nav__lists">
         <ul>
-          <a href="/">
+          <Link to="/">
             <li>Home</li>
-          </a>
-          <a href="/about">
+          </Link>
+          <Link to="/about">
             <li>About</li>
-          </a>
-          <a href="/services">
+          </Link>
+          <Link to="/services">
             <li>Services</li>
-          </a>
-          <a href="/events">
+          </Link>
+          <Link to="/events">
             <li>Events</li>
-          </a>
-          <a href="/portfolio">
+          </Link>
+          <Link to="/portfolio">
             <li>Portfolio</li>
-          </a>
-          <a href="/contacts">
+          </Link>
+          <Link to="/contacts">
             <li>Contact Us</li>
-          </a>
+          </Link>
         </ul>
       </div>
     </div>

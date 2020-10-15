@@ -1,6 +1,7 @@
 {
   "name": "event",
   "version": "0.1.0",
+  "homepage": "http://techtrickz.in/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",

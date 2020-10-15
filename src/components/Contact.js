@@ -3,20 +3,20 @@ import "../styles/Contact.css";
 import axios from "axios";
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState();
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
 
-  const submitMsg = async (e) => {
+  const submitMsg =  (e) => {
     e.preventDefault();
-    const response = await axios.post(
-      `http://localhost:8080/contact/insert.php/`,
+    const response = axios.post(
+      `http://techtrickz.in/Apis/contact/insert.php/`,
       {
-        cname: name,
-        cemail: email,
-        cnum: phone,
-        cmessage: message,
+        "cname": name,
+        "cemail": email,
+        "cnum": phone,
+        "cmessage": message,
       }
     );
 
@@ -27,6 +27,8 @@ const Contact = () => {
     }
 
     alert(`Message received. You'll be replied soon on ${email}`);
+    
+    
   };
   return (
     <div className="Contact">
@@ -41,7 +43,7 @@ const Contact = () => {
               className="userName form-control"
               placeholder="Name"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) =>setName(e.target.value)}
               required
             />
             <input

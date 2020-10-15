@@ -3,7 +3,6 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import YouTubeIcon from "@material-ui/icons/YouTube";
 
 import "../styles/Footer.css";
 import { Link } from "react-router-dom";
@@ -57,9 +56,9 @@ const Footer = () => {
             Far far away, behind the word mountains, far from the countries
             Vokalia and Consonantia, there live the blind texts.
           </p>
-          <a href="/contacts">
+          <Link to="/contacts">
             <button className="contact">Get in Touch</button>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="footer__copyright">
