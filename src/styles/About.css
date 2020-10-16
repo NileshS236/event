@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  font-family: "Syne", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .About__home > h1 {
@@ -44,6 +44,20 @@
   height: 400px;
   border-left: 1px solid darkgray;
 }
+.img {
+  position: relative;
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  border-bottom: 1px solid darkgray;
+}
+.img > img {
+  border: none;
+  margin: auto;
+  height: 400px;
+}
 .About__info {
   display: flex;
   flex-direction: column;
@@ -55,22 +69,40 @@
   height: 300px;
   overflow: scroll;
   margin-right: 150px;
-  font-family: "Syne", sans-serif;
-  color: #a0a0a0;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
 }
-.About__info > h5::-webkit-scrollbar {
+.Aboutpng__info > h5 {
+  width: 400px;
+  height: 300px;
+  overflow: scroll;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+}
+.img > .About__png {
+  margin-right: 50px;
+}
+.img > div > h5 {
+  margin-left: 50px;
+}
+.About__info > h5::-webkit-scrollbar,
+.Aboutpng__info > h5::-webkit-scrollbar {
   width: 8px;
 }
-.About__info > h5::-webkit-scrollbar-track {
+.About__info > h5::-webkit-scrollbar-track,
+.Aboutpng__info > h5::-webkit-scrollbar-track {
   background-color: transparent;
 }
-.About__info > h5::-webkit-scrollbar-thumb {
+.About__info > h5::-webkit-scrollbar-thumb,
+.Aboutpng__info > h5::-webkit-scrollbar-thumb {
   background-color: lightgray;
   border-radius: 5px;
 }
+.About__info > h5::-webkit-scrollbar-corner,
 .About__info > h5::-webkit-scrollbar-corner {
   display: none;
 }
+.About__info > h5::-webkit-scrollbar-thumb:hover,
 .About__info > h5::-webkit-scrollbar-thumb:hover {
   background-color: darkgray;
 }
@@ -96,17 +128,9 @@
 }
 .member > img {
   height: 300px;
-  margin: 50px 30px 15px 30px;
+  margin: 50px 30px 50px 30px;
   object-fit: contain;
   transition: 0.3s;
-}
-.member > h2 {
-  text-align: center;
-  margin-bottom: 100px;
-}
-.member > img:hover {
-  transform: scale(1.1);
-  box-shadow: 1px 4px 10px rgb(0, 0, 0);
 }
 
 @media screen and (max-width: 1280px) {
@@ -134,9 +158,6 @@
   }
   .member > img {
     margin: 10;
-  }
-  .member > h2 {
-    margin-bottom: 25px;
   }
 }
 

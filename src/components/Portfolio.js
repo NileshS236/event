@@ -24,14 +24,15 @@ const Portfolio = () => {
         <h1>Our Posts</h1>
       </div>
       <div className="Portfolio__imageContainer">
-        {image.map((i) => (
-          <img
-            className="Portfolio__image"
-            key={i.P_id}
-            src={i.P_image}
-            alt="pict"
-          />
-        ))}
+        {image.length &&
+          image.map((i) => (
+            <img
+              className="Portfolio__image"
+              key={i.P_id}
+              src={i.P_image}
+              alt="pict"
+            />
+          ))}
       </div>
     </div>
   );

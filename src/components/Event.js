@@ -6,12 +6,22 @@ import DisplayEvent from "./DisplayEvent";
 function Event() {
   const [eventData, setEventData] = useState([]);
 
+  // console.log(view);
+
   const fetchEventData = async () => {
     const response = await axios.get(
       "http://techtrickz.in/Apis/eventForm/fetch.php"
     );
-    setEventData(response?.data);
+    setEventData(response.data);
   };
+
+  let events =
+    eventData.length &&
+    eventData.filter((event) => {
+      if (event.name !== "" && event.image !== "") {
+        return event;
+      }
+    });
 
   useEffect(() => {
     fetchEventData();
@@ -23,14 +33,15 @@ function Event() {
         <h1>Upcoming Events</h1>
       </div>
       <div className="Event__content">
-        {eventData?.map((event) => (
-          <DisplayEvent
-            key={event.E_ID}
-            id={event.E_ID}
-            image={event.image}
-            name={event.name}
-          />
-        ))}
+        {events &&
+          events?.map((event) => (
+            <DisplayEvent
+              key={event.E_ID}
+              id={event.E_ID}
+              image={event.image}
+              name={event.name}
+            />
+          ))}
       </div>
     </div>
   );

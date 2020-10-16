@@ -23,7 +23,6 @@
   width: 100%;
 }
 .Services__home > h1 {
-  color: white;
   font-size: 100px;
 }
 .Services__home > p {
@@ -52,6 +51,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 200px;
 }
 .Service > h4 {
   text-align: center;

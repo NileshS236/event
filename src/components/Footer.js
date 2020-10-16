@@ -51,7 +51,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer__contact">
-          <h3>TechTrikz</h3>
+          <h3>TechTrickz</h3>
           <p>
             Far far away, behind the word mountains, far from the countries
             Vokalia and Consonantia, there live the blind texts.

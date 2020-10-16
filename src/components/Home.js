@@ -23,14 +23,14 @@ const Home = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 custom-img"
-            src="/images/carousel-3.jpeg"
+            src="/images/carousel-3.png"
             alt="Third slide"
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100 custom-img"
-            src="/images/carousel-4.jpeg"
+            src="/images/carousel-4.png"
             alt="Third slide"
           />
         </Carousel.Item>

@@ -37,12 +37,33 @@ const About = () => {
         </div>
         <img className="About__svg" src="/images/about.svg" alt="about" />
       </div>
+      <div className="img">
+        <img className="About__png" src="/images/riddhi.png" alt="about" />
+        <div className="Aboutpng__info">
+          <h5>
+            Hello, People out there! I, Riddhi Bharti Hitesh Savla. Founder of
+            Techtrickz, wants to share this good news with you all. Techtrickz,
+            is a company which will provide an individual a wholesome services
+            related to TECHNOLOGY. Globally, an individual's perspective is to
+            UPGRAD YOURSELF AND UPDATE YOURSELF! So have we, decided to provide
+            all kind of services which will not only be helpful to you but also
+            informative. Techtrickz, is a dream which definitely will come true
+            with all your love and support. So let's make a pact, hand in hand
+            WE ALL WILL GROW TOGETHER, AND GLOW TOGETHER. We are dropping our
+            "Bada Packet, Bada Dhamaka" - Techtrickz. It's time to live your own
+            life in your style. We have come a long way from, NOKIA 312c to
+            ANDROID TOUCH screen. Indulge yourself in enhancing your methods for
+            using smart phones. A great initiative, one firm platform for
+            Everything required to be fulfilled on your demands. Remember the
+            motive, UPGRADE YOURSELF, AND UPDATE YOURSELF! with Techtrickz.
+          </h5>
+        </div>
+      </div>
       <div className="About__team">
         <h1>Meet Our Team</h1>
         <div className="About__members">
           <div className="member">
-            <img src="/images/img.jfif" alt="Riddhi" />
-            <h2 className="member__name">SRG</h2>
+            <img src="/images/SRG_LOGO.png" alt="Riddhi" />
           </div>
         </div>
       </div>

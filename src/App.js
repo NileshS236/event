@@ -26,7 +26,7 @@ function App() {
             <Home />
             <WhyUs />
             <AboutSec />
-            <FactsSec />
+            {/* <FactsSec /> */}
             <ServicesSec />
             <Footer />
           </Route>

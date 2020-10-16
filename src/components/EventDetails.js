@@ -10,6 +10,8 @@ const EventDetails = () => {
   const [qnum, setQnum] = useState(0);
   const [questions, setQuestions] = useState([]);
 
+  const [eventData, setEventData] = useState([]);
+  const [lastEvent, setLastEvent] = useState([]);
   const [userDetails, setUserDetails] = useState([]);
 
   const [name, setName] = useState("");
@@ -23,6 +25,19 @@ const EventDetails = () => {
     );
     setState(response.data[0]);
   };
+
+  const fetchEventData = async () => {
+    const response = await axios.get(
+      "http://techtrickz.in/Apis/eventForm/fetch.php"
+    );
+    setEventData(response.data);
+    setLastEvent(eventData[eventData.length - 1]);
+    console.log("object");
+  };
+
+  useEffect(() => {
+    fetchEventData();
+  }, [name]);
 
   const fetchUserDetails = async () => {
     const userdetails = await axios.get(
@@ -40,29 +55,38 @@ const EventDetails = () => {
 
   const submitDetails = (e) => {
     e.preventDefault();
-    const user = axios.post("http://techtrickz.in/Apis/response/insert.php", {
-      E_ID: questions[0].E_ID,
-      name: name,
-      email: email,
-      num: phone,
-    });
+    axios
+      .post("http://techtrickz.in/Apis/response/insert.php", {
+        E_ID: lastEvent.E_ID,
+        name: name,
+        email: email,
+        num: phone,
+      })
+      .then((user) => console.log(user));
 
     document.querySelector(".detailsFormContent").style.display = "none";
-    document.querySelector(".qtnFormContent").style.display = "flex";
+    if (!questions.length) {
+      document.querySelector(".enrolled").style.display = "block";
+    } else {
+      document.querySelector(".qtnFormContent").style.display = "flex";
+    }
   };
 
   useEffect(() => {
     fetchDetails();
     fetchQtns();
-    fetchUserDetails();
   }, []);
+
+  useEffect(() => {
+    fetchUserDetails();
+  }, [ans]);
 
   const changeqts = async (e) => {
     e.preventDefault();
     const answered = await axios.post(
       "http://techtrickz.in/Apis/answer/insert.php",
       {
-        U_ID: userDetails[userDetails.length - 1]?.ID,
+        U_ID: userDetails[userDetails.length - 1].ID,
         Q_ID: questions[qnum]?.Q_ID,
         E_ID: questions[qnum]?.E_ID,
         ans: ans,
@@ -131,29 +155,32 @@ const EventDetails = () => {
           </button>
         </form>
       </div>
-      <div className="qtnFormContent container border my-3 py-3 justify-content-center align-items-center">
-        <form
-          className="qtnForm d-flex flex-column w-100 py-3"
-          onSubmit={changeqts}
-        >
-          <h2>{questions[qnum]?.questn}</h2>
-          <input
-            type="text"
-            className="answer form-control my-3"
-            placeholder="Your answer here..."
-            value={ans}
-            onChange={(e) => setAns(e.target.value)}
-            required
-          />
 
-          <button
-            type="submit"
-            className="enroll btn btn-primary my-3 w-25 ml-auto"
+      {questions.length && (
+        <div className="qtnFormContent container border my-3 py-3 justify-content-center align-items-center">
+          <form
+            className="qtnForm d-flex flex-column w-100 py-3"
+            onSubmit={changeqts}
           >
-            Next
-          </button>
-        </form>
-      </div>
+            <h2>{questions[qnum]?.questn}</h2>
+            <input
+              type="text"
+              className="answer form-control my-3"
+              placeholder="Your answer here..."
+              value={ans}
+              onChange={(e) => setAns(e.target.value)}
+              required
+            />
+
+            <button
+              type="submit"
+              className="enroll btn btn-primary my-3 w-25 ml-auto"
+            >
+              Next
+            </button>
+          </form>
+        </div>
+      )}
       <h1 className="enrolled">You're Enrolled</h1>
     </>
   );
