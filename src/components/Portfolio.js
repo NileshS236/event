@@ -8,11 +8,19 @@ const Portfolio = () => {
 
   const fetchImages = async () => {
     const response = await axios.get(
-      "http://techtrickz.in/Apis/portfolio/fetch.php"
+      "https://techtrickz.in/Apis/portfolio/fetch.php"
     );
 
     setImage(response.data);
   };
+
+  let imgAdd =
+    image.length &&
+    image.filter((img) => {
+      if (img.P_image !== "") {
+        return img;
+      }
+    });
 
   useEffect(() => {
     fetchImages();
@@ -24,8 +32,8 @@ const Portfolio = () => {
         <h1>Our Posts</h1>
       </div>
       <div className="Portfolio__imageContainer">
-        {image.length &&
-          image.map((i) => (
+        {imgAdd &&
+          imgAdd.map((i) => (
             <img
               className="Portfolio__image"
               key={i.P_id}

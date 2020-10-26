@@ -25,15 +25,15 @@ input[type="number"] {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("/images/carousel-5.jpeg");
+  background-image: url("/images/every-where-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position: center;
   height: 15vh;
   width: 100%;
 }
 .Contact__home > h1 {
-  color: white;
+  color: black;
   font-size: 80px;
 }
 
@@ -73,8 +73,7 @@ input[type="number"] {
 .button {
   position: relative;
   top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
+  float: right;
   height: 50px;
   width: 150px;
   border: 1px solid;
@@ -168,7 +167,7 @@ input[type="number"] {
     width: 80px;
   }
   .mapouter {
-    width: 300px;
+    display: none;
   }
   .gmap_canvas {
     width: 300px;

@@ -5,7 +5,7 @@ import "../styles/AboutSec.css";
 const AboutSec = () => {
   return (
     <div className="about">
-      <h1>About</h1>
+      <h1>About Us</h1>
       <div className="about__content">
         <img className="about__svg" src="/images/about.svg" alt="about" />
         <div className="about__info">
@@ -18,9 +18,9 @@ const AboutSec = () => {
             technology, we have all expertise in our team for all things related
             to tech
           </h5>
-          <Link to="/about">
+          <a href="/about">
             <button className="about__more">View More &#62;</button>
-          </Link>
+          </a>
         </div>
       </div>
     </div>

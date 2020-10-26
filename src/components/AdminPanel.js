@@ -51,7 +51,7 @@ const Contact = () => {
   const [contInfo, setContInfo] = useState([]);
   const contactApi = async () => {
     const contactInfo = await axios.get(
-      "http://techtrickz.in/Apis/contact/fetch.php"
+      "https://techtrickz.in/Apis/contact/fetch.php"
     );
     setContInfo(contactInfo.data);
   };
@@ -95,10 +95,18 @@ const Portfolio = () => {
 
   const getImg = async () => {
     const portfolioImg = await axios.get(
-      "http://techtrickz.in/Apis/portfolio/fetch.php"
+      "https://techtrickz.in/Apis/portfolio/fetch.php"
     );
     setImages(portfolioImg.data);
   };
+
+  let imgsAdd =
+    images.length &&
+    images.filter((img) => {
+      if (img.P_image !== "") {
+        return img;
+      }
+    });
 
   const [imgAdd, setImgAdd] = useState("");
 
@@ -116,7 +124,7 @@ const Portfolio = () => {
 
   const delImg = (id) => {
     axios
-      .post(`http://techtrickz.in/Apis/portfolio/delete.php`, {
+      .post(`https://techtrickz.in/Apis/portfolio/delete.php`, {
         cid: id,
       })
       .then((res) => getImg());
@@ -125,11 +133,12 @@ const Portfolio = () => {
   const postImg = async (e) => {
     e.preventDefault();
     const response = await axios.post(
-      "http://techtrickz.in/Apis/portfolio/insert.php",
+      "https://techtrickz.in/Apis/portfolio/insert.php",
       {
         cimage: imgAdd,
       }
     );
+    document.querySelector(".form-control").value = "";
   };
 
   return (
@@ -147,25 +156,34 @@ const Portfolio = () => {
           Post
         </button>
       </form>
-      {images.length &&
-        images?.map((image) => (
-          <div>
-            <img
-              style={styles}
-              src={image.P_image}
-              alt={image.P_name}
-              key={image.P_id}
-            />
-            <button
-              id={image.P_id}
-              onClick={() => {
-                delImg(image.P_id);
-              }}
-            >
-              del
-            </button>
-          </div>
-        ))}
+      <table className="table table-bordered">
+        <tbody>
+          {imgsAdd &&
+            imgsAdd?.map((image) => (
+              <tr>
+                <td>
+                  <img
+                    style={styles}
+                    src={image.P_image}
+                    alt={image.P_name}
+                    key={image.P_id}
+                  />
+                </td>
+                <td>
+                  <button
+                    id={image.P_id}
+                    onClick={() => {
+                      delImg(image.P_id);
+                    }}
+                    className="btn btn-danger"
+                  >
+                    del
+                  </button>
+                </td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
     </>
   );
 };
@@ -187,7 +205,7 @@ const Event = () => {
   const createEvent = async (e) => {
     e.preventDefault();
     const response = await axios.post(
-      "http://techtrickz.in/Apis/eventForm/insert.php",
+      "https://techtrickz.in/Apis/eventForm/insert.php",
       {
         cimage: imgAdd,
         cname: name,
@@ -195,6 +213,7 @@ const Event = () => {
         cdate: date,
       }
     );
+    console.log(response);
   };
 
   let events =
@@ -207,7 +226,7 @@ const Event = () => {
 
   const fetchEventData = async () => {
     const response = await axios.get(
-      "http://techtrickz.in/Apis/eventForm/fetch.php"
+      "https://techtrickz.in/Apis/eventForm/fetch.php"
     );
     setEventData(response.data);
     setLastEvent(eventData[eventData.length - 1]);
@@ -221,7 +240,7 @@ const Event = () => {
     e.preventDefault();
 
     axios
-      .post("http://techtrickz.in/Apis/questions/insert.php", {
+      .post("https://techtrickz.in/Apis/questions/insert.php", {
         eid: lastEvent.E_ID,
         cqts: question,
       })
@@ -233,24 +252,22 @@ const Event = () => {
 
   const fetchEventRes = async () => {
     const res = await axios.get(
-      "http://techtrickz.in/Apis/adminEve/eventResponse.php"
+      "https://techtrickz.in/Apis/adminEve/eventResponse.php"
     );
-    console.log(res);
     setEventRes(res.data);
   };
 
   const fetchQtnAns = async () => {
     const res = await axios.get(
-      "http://techtrickz.in/Apis/adminEve/quesAns.php"
+      "https://techtrickz.in/Apis/adminEve/quesAns.php"
     );
-    console.log(res);
     setQtnRes(res.data);
   };
 
   const delEvent = (id) => {
     console.log(id);
     axios
-      .post(`http://techtrickz.in/Apis/eventForm/delete.php`, {
+      .post(`https://techtrickz.in/Apis/eventForm/delete.php`, {
         cid: id,
       })
       .then((res) => console.log(res))

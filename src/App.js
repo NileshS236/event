@@ -15,6 +15,7 @@ import Services from "./components/Services";
 import ServicesSec from "./components/ServicesSec";
 import WhyUs from "./components/WhyUs";
 import AdminPanel from "./components/AdminPanel";
+import Testimonials from "./components/Testimonials";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <AboutSec />
             {/* <FactsSec /> */}
             <ServicesSec />
+            <Testimonials />
             <Footer />
           </Route>
           <Route path="/about" exact>

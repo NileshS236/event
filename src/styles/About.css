@@ -4,39 +4,38 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  width: 100%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .About__home > h1 {
-  color: white;
+  color: black;
   font-size: 100px;
 }
 .About__home > p {
-  color: white;
+  color: black;
 }
 
 .About__home {
-  position: relative;
   display: flex;
-  top: 100px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("/images/carousel-5.jpeg");
+  background-image: url("/images/every-where-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  height: 87vh;
+  background-position: bottom;
+  background-attachment: fixed;
+  height: 100vh;
   width: 100%;
 }
 
 .About__content {
   position: relative;
   display: flex;
-  margin-top: 50px;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  min-height: 80vh;
   border-bottom: 1px solid darkgray;
 }
 .About__content > img {
@@ -47,16 +46,16 @@
 .img {
   position: relative;
   display: flex;
-  margin-top: 50px;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  min-height: 50vh;
   border-bottom: 1px solid darkgray;
 }
 .img > img {
   border: none;
   margin: auto;
   height: 400px;
+  margin-right: 50px;
 }
 .About__info {
   display: flex;
@@ -78,9 +77,6 @@
   overflow: scroll;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 1px;
-}
-.img > .About__png {
-  margin-right: 50px;
 }
 .img > div > h5 {
   margin-left: 50px;
@@ -116,7 +112,6 @@
 }
 .About__team > h1 {
   padding-bottom: 20px;
-  /* width: 50%; */
   margin-top: 50px;
   text-align: center;
   border-bottom: 1px solid;
@@ -131,6 +126,8 @@
   margin: 50px 30px 50px 30px;
   object-fit: contain;
   transition: 0.3s;
+  border: 1px solid lightgray;
+  padding: 20px;
 }
 
 @media screen and (max-width: 1280px) {
@@ -159,6 +156,21 @@
   .member > img {
     margin: 10;
   }
+  .img > img {
+    margin: 0;
+    height: 300px;
+  }
+  .Aboutpng__info {
+    margin: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Aboutpng__info > h5 {
+    margin-top: 40px;
+    width: 70%;
+  }
 }
 
 @media screen and (max-width: 764px) {
@@ -177,6 +189,15 @@
   .About__home > h1 {
     font-size: 70px;
   }
+  .img {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .Aboutpng__info > h5 {
+    margin-top: 20px;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 340px) {
@@ -185,5 +206,8 @@
   }
   .About__home > h1 {
     font-size: 50px;
+  }
+  .img > img {
+    height: 200px;
   }
 }

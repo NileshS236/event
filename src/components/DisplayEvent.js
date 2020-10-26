@@ -4,12 +4,12 @@ import "../styles/DisplayEvent.css";
 
 const DisplayEvent = ({ image, name, id }) => {
   return (
-    <Link to={`/events/${id}`}>
+    <a href={`/events/${id}`}>
       <div className="displayEvent">
         <img src={image} alt="pict" />
         <h2>{name}</h2>
       </div>
-    </Link>
+    </a>
   );
 };
 

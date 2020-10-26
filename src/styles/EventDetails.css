@@ -11,7 +11,7 @@
 .eventDetails__img {
   display: flex;
   justify-content: center;
-  max-height: 350px;
+  min-height: 350px;
   object-fit: contain;
 }
 .eventDetails__content {

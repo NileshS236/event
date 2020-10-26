@@ -15,15 +15,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("/images/carousel-5.jpeg");
+  background-image: url("/images/every-where-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top;
+  background-position: center;
   height: 15vh;
   width: 100%;
 }
 .Portfolio__home > h1 {
-  color: white;
+  color: black;
   font-size: 80px;
 }
 

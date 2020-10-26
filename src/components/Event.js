@@ -10,7 +10,7 @@ function Event() {
 
   const fetchEventData = async () => {
     const response = await axios.get(
-      "http://techtrickz.in/Apis/eventForm/fetch.php"
+      "https://techtrickz.in/Apis/eventForm/fetch.php"
     );
     setEventData(response.data);
   };

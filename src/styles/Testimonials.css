@@ -1,0 +1,34 @@
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.testimonials > h1 {
+  text-align: center;
+  margin-top: 50px;
+  font-family: "Syne", sans-serif;
+  border-bottom: 1px solid rgb(110, 0, 225);
+  padding-bottom: 15px;
+  width: 50%;
+}
+.testimonial-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 340px;
+  border: 1px solid lightgray;
+  transition: 0.3s;
+}
+.testimonial:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}

@@ -1,10 +1,13 @@
 import React from "react";
 import "../styles/Nav.css";
-import { Link } from "react-router-dom";
 
 const Nav = () => {
   const openHamMenu = () => {
     document.getElementsByTagName("ul")[0].classList.toggle("open");
+  };
+
+  const removeNav = () => {
+    document.getElementsByTagName("ul")[0].classList.remove("open");
   };
 
   return (
@@ -17,24 +20,24 @@ const Nav = () => {
       </div>
       <div className="nav__lists">
         <ul>
-          <Link to="/">
-            <li>Home</li>
-          </Link>
-          <Link to="/about">
-            <li>About</li>
-          </Link>
-          <Link to="/services">
-            <li>Services</li>
-          </Link>
-          <Link to="/events">
-            <li>Events</li>
-          </Link>
-          <Link to="/portfolio">
-            <li>Portfolio</li>
-          </Link>
-          <Link to="/contacts">
-            <li>Contact Us</li>
-          </Link>
+          <a href="/">
+            <li onClick={removeNav}>Home</li>
+          </a>
+          <a href="/about">
+            <li onClick={removeNav}>About</li>
+          </a>
+          <a href="/services">
+            <li onClick={removeNav}>Services</li>
+          </a>
+          <a href="/events">
+            <li onClick={removeNav}>Events</li>
+          </a>
+          <a href="/portfolio">
+            <li onClick={removeNav}>Portfolio</li>
+          </a>
+          <a href="/contacts">
+            <li onClick={removeNav}>Contact Us</li>
+          </a>
         </ul>
       </div>
     </div>

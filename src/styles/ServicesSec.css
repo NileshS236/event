@@ -5,9 +5,14 @@
   justify-content: space-evenly;
   align-items: center;
   font-family: "Syne", sans-serif;
+  border-bottom: 1px solid darkgray;
 }
 .services > h1 {
   font-family: "Syne", sans-serif;
+  border-bottom: 1px solid rgb(110, 0, 225);
+  width: 50%;
+  padding-bottom: 15px;
+  text-align: center;
   margin-top: 50px;
 }
 .services img {
@@ -18,14 +23,9 @@
 .services__content {
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
-}
-
-.service {
-  display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .services__viewMore {

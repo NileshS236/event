@@ -21,14 +21,14 @@ const EventDetails = () => {
 
   const fetchDetails = async () => {
     const response = await axios.get(
-      `http://techtrickz.in/Apis/eventForm/singledata.php?E_ID=${id}`
+      `https://techtrickz.in/Apis/eventForm/singledata.php?E_ID=${id}`
     );
     setState(response.data[0]);
   };
 
   const fetchEventData = async () => {
     const response = await axios.get(
-      "http://techtrickz.in/Apis/eventForm/fetch.php"
+      "https://techtrickz.in/Apis/eventForm/fetch.php"
     );
     setEventData(response.data);
     setLastEvent(eventData[eventData.length - 1]);
@@ -41,14 +41,14 @@ const EventDetails = () => {
 
   const fetchUserDetails = async () => {
     const userdetails = await axios.get(
-      "http://techtrickz.in/Apis/response/fetch.php"
+      "https://techtrickz.in/Apis/response/fetch.php"
     );
     setUserDetails(userdetails.data);
   };
 
   const fetchQtns = async () => {
     const qtns = await axios.get(
-      `http://techtrickz.in/Apis/questions/singledata.php?E_ID=${id}`
+      `https://techtrickz.in/Apis/questions/singledata.php?E_ID=${id}`
     );
     setQuestions(qtns.data);
   };
@@ -56,7 +56,7 @@ const EventDetails = () => {
   const submitDetails = (e) => {
     e.preventDefault();
     axios
-      .post("http://techtrickz.in/Apis/response/insert.php", {
+      .post("https://techtrickz.in/Apis/response/insert.php", {
         E_ID: lastEvent.E_ID,
         name: name,
         email: email,
@@ -84,7 +84,7 @@ const EventDetails = () => {
   const changeqts = async (e) => {
     e.preventDefault();
     const answered = await axios.post(
-      "http://techtrickz.in/Apis/answer/insert.php",
+      "https://techtrickz.in/Apis/answer/insert.php",
       {
         U_ID: userDetails[userDetails.length - 1].ID,
         Q_ID: questions[qnum]?.Q_ID,

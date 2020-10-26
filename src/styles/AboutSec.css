@@ -1,7 +1,7 @@
 .about {
   display: flex;
   flex-direction: column;
-  min-height: 95vh;
+  min-height: 80vh;
   width: 100%;
   align-items: center;
   justify-content: space-evenly;
@@ -9,6 +9,10 @@
 }
 .about > h1 {
   font-family: "Syne", sans-serif;
+  width: 50%;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgb(110, 0, 225);
 }
 
 .about__content {
@@ -30,7 +34,7 @@
   width: 400px;
   margin-left: 100px;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   letter-spacing: 1px;
 }
 

@@ -53,12 +53,12 @@ const Footer = () => {
         <div className="footer__contact">
           <h3>TechTrickz</h3>
           <p>
-            Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the blind texts.
+            One platform for all the technical services you want. We are ready
+            to help you for your growth.
           </p>
-          <Link to="/contacts">
+          <a href="/contacts">
             <button className="contact">Get in Touch</button>
-          </Link>
+          </a>
         </div>
       </div>
       <div className="footer__copyright">

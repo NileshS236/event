@@ -6,9 +6,9 @@ const About = () => {
   return (
     <div className="About">
       <div className="About__home">
-        <h1>About</h1>
+        <h1>About Us</h1>
         <p>
-          <Link to="/">Home</Link> / About
+          <Link to="/">Home</Link> / About Us
         </p>
       </div>
       <div className="About__content">
@@ -41,7 +41,7 @@ const About = () => {
         <img className="About__png" src="/images/riddhi.png" alt="about" />
         <div className="Aboutpng__info">
           <h5>
-            Hello, People out there! I, Riddhi Bharti Hitesh Savla. Founder of
+            Hello, People out there! I Riddhi Bharti Hitesh Savla. Founder of
             Techtrickz, wants to share this good news with you all. Techtrickz,
             is a company which will provide an individual a wholesome services
             related to TECHNOLOGY. Globally, an individual's perspective is to
@@ -60,10 +60,19 @@ const About = () => {
         </div>
       </div>
       <div className="About__team">
-        <h1>Meet Our Team</h1>
+        <h1>Meet Our Partners</h1>
         <div className="About__members">
           <div className="member">
-            <img src="/images/SRG_LOGO.png" alt="Riddhi" />
+            <img src="/images/SRG_LOGO.png" alt="SRG" />
+          </div>
+          <div className="member">
+            <img
+              src="/images/Friends-Academy-logo.jpeg"
+              alt="Friends Academy"
+            />
+          </div>
+          <div className="member">
+            <img src="/images/online.jpeg" alt="Online" />
           </div>
         </div>
       </div>
