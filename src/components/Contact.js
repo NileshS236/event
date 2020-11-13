@@ -94,7 +94,10 @@ const Contact = () => {
         </div>
       </div>
       <div className="Contact__footer">
-        <p>Copyright &copy;2020 | Made With ❤ by SRG solutions IT Pvt. Ltd.</p>
+        <p>
+          Copyright &copy;2020 | Made With ❤ by{" "}
+          <a href="http://codesprout.in/"> CodeSprout IT Pvt. Ltd.</a>
+        </p>
       </div>
     </div>
   );

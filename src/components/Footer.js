@@ -42,12 +42,24 @@ const Footer = () => {
         <div className="footer__quickLinks">
           <h3>Quick Links</h3>
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Events</li>
-            <li>Portfolio</li>
-            <li>Contact</li>
+            <a href="/">
+              <li>Home</li>
+            </a>
+            <a href="/about">
+              <li>About</li>
+            </a>
+            <a href="/services">
+              <li>Services</li>
+            </a>
+            <a href="/events">
+              <li>Events</li>
+            </a>
+            <a href="/portfolio">
+              <li>Portfolio</li>
+            </a>
+            <a href="/contacts">
+              <li>Contact Us</li>
+            </a>
           </ul>
         </div>
         <div className="footer__contact">
@@ -62,7 +74,10 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer__copyright">
-        <p>Copyright &copy;2020 | Made With ❤ by SRG solutions IT Pvt. Ltd.</p>
+        <p>
+          Copyright &copy;2020 | Made With ❤ by{" "}
+          <a href="http://codesprout.in/"> CodeSprout IT Pvt. Ltd.</a>
+        </p>
       </div>
     </div>
   );

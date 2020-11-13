@@ -61,9 +61,14 @@
   padding: 0;
 }
 
-.footer__quickLinks > ul > li {
+.footer__quickLinks > ul > a > li {
   padding: 0;
   margin: 10px;
+  color: black;
+  transition: 0.2s;
+}
+.footer__quickLinks > ul > a > li:hover {
+  color: #41ee;
 }
 
 @media screen and (max-width: 1024px) {
