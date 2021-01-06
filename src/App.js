@@ -6,7 +6,7 @@ import AboutSec from "./components/AboutSec";
 import Contact from "./components/Contact";
 import Event from "./components/Event";
 import EventDetails from "./components/EventDetails";
-import FactsSec from "./components/FactsSec";
+// import FactsSec from "./components/FactsSec";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
@@ -23,7 +23,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" exact>
-            <Nav />
+            <Nav loc="home" />
             <Home />
             <WhyUs />
             <AboutSec />
@@ -33,31 +33,31 @@ function App() {
             <Footer />
           </Route>
           <Route path="/about" exact>
-            <Nav />
+            <Nav loc="about" />
             <About />
             <Footer />
           </Route>
           <Route path="/services" exact>
-            <Nav />
+            <Nav loc="services" />
             <Services />
             <Footer />
           </Route>
           <Route path="/contacts" exact>
-            <Nav />
+            <Nav loc="contacts" />
             <Contact />
           </Route>
           <Route path="/portfolio" exact>
-            <Nav />
+            <Nav loc="portfolio" />
             <Portfolio />
             <Footer />
           </Route>
           <Route path="/events" exact>
-            <Nav />
+            <Nav loc="events" />
             <Event />
             <Footer />
           </Route>
           <Route path="/events/:id" exact>
-            <Nav />
+            <Nav loc="events" />
             <EventDetails />
             <Footer />
           </Route>

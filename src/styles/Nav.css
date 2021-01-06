@@ -88,3 +88,8 @@
     font-size: 20px;
   }
 }
+
+.active {
+  background: #41ee;
+  color: white;
+}

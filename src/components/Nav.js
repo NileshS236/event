@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Nav.css";
 
-const Nav = () => {
+const Nav = ({ loc }) => {
   const openHamMenu = () => {
     document.getElementsByTagName("ul")[0].classList.toggle("open");
   };
@@ -9,6 +9,40 @@ const Nav = () => {
   const removeNav = () => {
     document.getElementsByTagName("ul")[0].classList.remove("open");
   };
+
+  const setActive = () => {
+    let navlinksLI = document.querySelectorAll(".link");
+    for (let i = 0; i < navlinksLI.length; i++) {
+      navlinksLI[i].addEventListener("click", () => {
+        for (let j = 0; j < navlinksLI.length; j++) {
+          navlinksLI[j].classList.remove("active");
+        }
+        navlinksLI[i].classList.add("active");
+      });
+    }
+  };
+
+  useEffect(() => {
+    setActive();
+    removeNav();
+  });
+
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      let navlinks = document.querySelectorAll(".link");
+      for (let i = 0; i < navlinks.length; i++) {
+        if (navlinks[i].getAttribute("id") == loc) {
+          for (let j = 0; j < navlinks.length; j++) {
+            navlinks[j].classList.remove("active");
+          }
+          navlinks[i].classList.add("active");
+          break;
+        } else {
+          continue;
+        }
+      }
+    });
+  }, []);
 
   return (
     <div className="nav">
@@ -21,22 +55,38 @@ const Nav = () => {
       <div className="nav__lists">
         <ul>
           <a href="/">
-            <li onClick={removeNav}>Home</li>
+            <li className="link" id="home" onClick={(removeNav, setActive)}>
+              Home
+            </li>
           </a>
           <a href="/about">
-            <li onClick={removeNav}>About</li>
+            <li className="link" id="about" onClick={(removeNav, setActive)}>
+              About
+            </li>
           </a>
           <a href="/services">
-            <li onClick={removeNav}>Services</li>
+            <li className="link" id="services" onClick={(removeNav, setActive)}>
+              Services
+            </li>
           </a>
           <a href="/events">
-            <li onClick={removeNav}>Events</li>
+            <li className="link" id="events" onClick={(removeNav, setActive)}>
+              Events
+            </li>
           </a>
           <a href="/portfolio">
-            <li onClick={removeNav}>Portfolio</li>
+            <li
+              className="link"
+              id="portfolio"
+              onClick={(removeNav, setActive)}
+            >
+              Portfolio
+            </li>
           </a>
           <a href="/contacts">
-            <li onClick={removeNav}>Contact Us</li>
+            <li className="link" id="contacts" onClick={(removeNav, setActive)}>
+              Contact Us
+            </li>
           </a>
         </ul>
       </div>
